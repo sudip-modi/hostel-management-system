@@ -22,7 +22,7 @@ updateuserApp.get("/get-user/:id", async (req, res) => {
     console.log(req.params.id);
 
     const user = await adduserCollection
-      .find({id: parseInt(req.params.id)})
+      .find({ id: parseInt(req.params.id) })
       .toArray();
 
     console.log("hi");
@@ -34,13 +34,14 @@ updateuserApp.get("/get-user/:id", async (req, res) => {
 });
 
 // CREATE USER
-updateuserApp.post(
-  "/update-user",
+updateuserApp.put(
+  "/update-user/:id",
   expressAsyncHandler(async (req, res) => {
     //   get adduserCollection
     const adduserCollection = req.app.get("adduserCollection");
     // get newuser from client
     let newUser = req.body;
+    const ID = req.params.id;
     //check for username which already taken by someone
     //   let user = await usersCollection.findOne({username:newUser.username})
     //if user existed with that username
@@ -55,8 +56,12 @@ updateuserApp.post(
     //replace pain password with hashed password
     //       newUser.password= hashedPassword;
     //save new user
-    await adduserCollection.findOne(newUser);
-    res.send({ message: "create new user" });
+    const query = { id: parseInt(ID) };
+    const update = { $set: req.body };
+    const options = {};
+    adduserCollection.updateOne(query, update, options);
+    // await adduserCollection.findOne(newUser);
+    res.status(200).send({ message: "Updated new user" });
     //       res.status(201).send({message:"created"})
     //   }
   })

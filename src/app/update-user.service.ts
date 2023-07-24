@@ -26,8 +26,10 @@ export class UpdateUserService {
     return this.hc.get(`http://localhost:4000/updateuser-api/get-user/${id}`);
   }
 
+//   update the user
   updateUser(id: number, userData: any): Observable<any> {
-    const url = `http://localhost:4000/adduser-api/update-user/${id} `;
+    console.log("Updating");
+    const url = `http://localhost:4000/updateuser-api/update-user/${id} `;
     return this.hc.put(url, userData);
   }
 
