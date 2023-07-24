@@ -1,0 +1,23 @@
+label{
+    color: purple;
+    font-family: cursive;
+    font-weight: 500;
+    }
+    
+    body{
+        background-color: lavender;
+    }
+    form {
+        padding: 30px;
+    }
+    
+    #submit_reset{
+    
+        padding-left: 75px;
+    
+    }
+    
+    #reset{
+    
+     margin: 30px;
+    }

@@ -1,0 +1,82 @@
+<!-- <p>register works!</p> -->
+
+<body style="padding: 30px;">
+<p class="dispaly-4 text-center"><strong>Registration Form</strong> </p>
+<form [formGroup]="userRegisterForm"  (ngSubmit)="registerUser()">
+   
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control mb-3" formControlName="username" />
+        <!-- <div *ngIf="username.invalid && (username.touched ||username.dirty||ref.submitted)">
+            <p class="text-danger" *ngIf="username.errors?.['required']">
+                * Please Enter  UserName
+
+            </p>
+
+            <p class="text-danger" *ngIf="username.errors?.['minlength']">
+
+                *Min length of 5 chars required
+
+            </p>
+
+            <p class="text-danger" *ngIf="username.errors?.['maxlength']">
+
+                *Max length of 30 chars required
+
+            </p>
+            <p class="text-danger" *ngIf="username.errors?.['pattern']">
+
+                * Username should only contain spaces and alphabets
+
+            </p>
+
+        </div> -->
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control mb-3" formControlName="password"/>
+        <!-- <div *ngIf="password.invalid && (password.touched ||password.dirty||ref.submitted)">
+            <p class="text-danger" *ngIf="password.errors?.['required']">
+                * Please Enter Password
+
+            </p> 
+           
+            <p class="text-danger" *ngIf="password.errors?.['pattern']">
+
+                *Invalid Student ID </p> </div> -->
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control mb-3" formControlName="email"/>
+        <!-- <div *ngIf="username.invalid && (username.touched ||username.dirty||ref.submitted)">
+            <p class="text-danger" *ngIf="username.errors?.['required']">
+                * Please Enter Email
+
+            </p> 
+         </div> -->
+    </div>
+    <div formGroupName="address">
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input type="city" class="form-control mb-3" formControlName="city"/>
+    </div>
+    <div class="mb-3">
+        <label for="street" class="form-label">Street</label>
+        <input type="text" class="form-control mb-3" formControlName="street"/>
+    </div>
+    <div class="mb-3">
+        <label for="pincode" class="form-label">Pincode</label>
+        <input type="number" class="form-control mb-3" formControlName="pincode"/>
+    </div>
+</div>
+<br>
+    <button class="btn btn-info" type="submit">  Submit</button>
+    <!-- <div class="mb-3 " id="goToLogin">
+        <span id="already">
+            Already have an account?  &nbsp;   
+        </span>
+       
+        <button class="btn btn-primary "  (click)="goToLogin()">Login</button>
+    </div> -->
+     </form>
+    </body>

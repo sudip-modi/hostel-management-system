@@ -1,0 +1,21 @@
+
+<body>
+
+        <div style="padding: 20px;" *ngFor="let userObj of helpList">
+            <br>
+            <div style="border:2px solid rgb(191, 255, 0) ; width:500px;border-style: outset;padding: 10px; background-color: rgb(236, 240, 240);" >
+          <details>
+            <br>
+          
+            <li style="color: blueviolet;">{{userObj.username}}</li>  
+            <li>{{userObj.hostelid}}</li>
+            <li>{{userObj.email}}</li>
+            <li>{{userObj.contactno}}</li>
+            <li>{{userObj.roomno}}</li>
+            <summary>{{userObj.helpbox}}</summary>
+            <li>{{userObj.hostel}}</li></details>
+        </div>
+            <br>
+        </div>
+        
+    </body>

@@ -1,0 +1,21 @@
+form{
+    width:500px;
+    margin: auto;
+    margin-top: 40px;
+}
+body{
+    background-color: lavender;
+    padding: 30px;
+}
+p{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: cursive;
+    color: rgb(14, 3, 24);
+}
+label{
+    font-family: cursive;
+    color: rgb(14, 3, 24);
+    font-weight:300
+}

@@ -1,0 +1,63 @@
+
+<!-- <p>add-help works!</p> -->
+    <body>
+<p class="display-12  " id="page_title" style="margin: 20px;color: rgb(53, 157, 210);font-size: x-large;font-family: cursive;">
+
+    How May We Help You???</p>
+
+    <form style="padding: 20px;" [formGroup]="userHelpForm" (ngSubmit)="userHelp() ">
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text"  style="width:60%;height:40px;" class="form-control mb-3" formControlName="username"/>
+        </div>
+       
+        <div class="mb-3">
+            <label for="hostelid" class="form-label">Hostel ID</label>
+            <input type="number"  style="width:60%;height:40px;" class="form-control mb-3" formControlName="hostelid"/>
+        </div>
+        <div class="mb-3">
+            <label for="contactno" class="form-label">Contact No.</label>
+            <input type="number"  style="width:60%;height:40px;" class="form-control mb-3" formControlName="contactno"/>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email"  style="width:60%;height:40px;" class="form-control mb-3" formControlName="email"/>
+        </div>
+        <div class="mb-3">
+            <label for="hostel" class="form-label">Hostel</label>
+            <select class="form-select" id="hostel"
+            style="width:60%;height:40px;" formControlName="hostel">
+            <option value="" disabled selected>Select Hostel</option>
+            <option > Matangini Hall of Residence</option>
+            <option >Tamalika Ponda Seth Hall of Residence</option>
+            <option >B R Girls Hostel</option>
+            <option >Balaji boys Hostel</option>
+            <option >Ranichak Boys Hostel</option>
+            <option >P1 Boys Hostel Hostel</option>
+            <option >P2 Boys Hostel Hostel</option>
+            <option >P3 Boys Hostel Hostel</option>
+           
+
+        </select>
+        </div>
+      
+        <div class="mb-3">
+            <label for="roomno" class="form-label">Room No</label>
+            <input type="number"  style="width:60%;height:40px;" class="form-control mb-3" formControlName="roomno"/>
+        </div>
+        <div class="mb-3 container">
+            <label for="helpbox" class="form-label">Post Your Queries</label>
+            <textarea  name="helpbox" rows="5"
+            style="width:62%;height:120px;margin-left: -15px;" id="helpbox" class="form-control" formControlName="helpbox"
+                placeholder="Help Box"></textarea>
+           </div>
+    <div id="submit_reset">
+    <br><br>
+        <button type="submit" class="btn btn-info"  (click)="userHelp()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-danger" id="reset">Reset</button>
+    </div>
+    <br><br>
+
+    </form>
+</body>

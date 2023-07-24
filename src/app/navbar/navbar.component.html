@@ -1,0 +1,39 @@
+
+ 
+
+<ul class="nav nav-tabs" style="background-color:lightgrey;">
+ 
+  <li class="nav-item">
+    <img src="assets\images\HIT_logo.png" alt="logo" style="height: 70px;width:70px;  margin: 10px;">
+  </li>
+  <span *ngIf="!userLoginStatus">
+  <ul class="nav responsive-menu"  style="margin-left: 350px; margin-top: 30px;padding-left: 250px;" >
+      <li class="nav-item">
+        <a class="nav-link " routerLink="home" >Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="facilities">Facilities</a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contactus">Contact Us</a>
+      </li>
+      
+      
+    </ul>
+ </span>
+        <li class="nav-item" *ngIf="userLoginStatus">
+          <a class="nav-link" routerLink="login" (click)="logOut()">Logout</a>
+        </li>
+      
+   
+  </ul>

@@ -1,0 +1,28 @@
+body{
+    background-image: url('/assets/images/istockphoto-1215927063-612x612.jpg'); 
+ 
+}
+
+label{
+    font-family: cursive;
+    color:rgb(0, 0, 8)
+}
+form{
+    width:50%
+}
+#goToLogin{
+    margin-top: 20px;
+text-align: center;
+}
+#already{
+    color:rgb(1, 1, 15)
+}
+strong{
+    color:rgb(0, 0, 1);
+    font-size: larger;
+    
+}
+div p{
+  font-weight: bold;
+}
+/* hostel-management-system\src\assets\images\the-ash-antwerp-student.jpg */

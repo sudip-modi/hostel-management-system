@@ -1,0 +1,515 @@
+<body>
+  <p class="display-5" id="page_title">
+    Update details<span style="color: crimson">*</span>
+  </p>
+  <form
+    [formGroup]="updateUserForm"
+    #ref="ngForm"
+    (ngSubmit)="ref.valid && onFormSubmit()"
+  >
+    <div class="mb-3 container">
+      <!-- Display existing user ID in a disabled input field -->
+      <input type="number" placeholder="ID" formControlName="id" />
+      <label for="username" class="form-label">Student name</label>
+      <input
+        type="text"
+        style="width: 60%; height: 40px; margin-left: -8px"
+        [ngStyle]="{ 'border-color': hasErrorusername() ? 'red' : '' }"
+        class="form-control"
+        placeholder=" Student Name"
+        formControlName="username"
+      />
+
+      <div
+        *ngIf="
+          username.invalid &&
+          (username.touched || username.dirty || ref.submitted)
+        "
+      >
+        <p class="text-danger" *ngIf="username.errors?.['required']">
+          * Please Enter Student Name
+        </p>
+
+        <p class="text-danger" *ngIf="username.errors?.['minlength']">
+          *Min length of 5 chars required
+        </p>
+
+        <p class="text-danger" *ngIf="username.errors?.['maxlength']">
+          *Max length of 30 chars required
+        </p>
+        <p class="text-danger" *ngIf="username.errors?.['pattern']">
+          * Username should only contain spaces and alphabets
+        </p>
+      </div>
+    </div>
+    <div class="mb-3 container">
+      <label for="hostel_id" class="form-label">Hostel ID</label>
+      <input
+        type="number"
+        [ngStyle]="{ 'border-color': hasErrorhostel_id() ? 'red' : '' }"
+        style="width: 60%; height: 40px; margin-left: -8px"
+        name="hostel_id"
+        id="hostel_id"
+        class="form-control"
+        placeholder="Hostel ID"
+        formControlName="hostel_id"
+      />
+      <div
+        *ngIf="
+          hostel_id.invalid &&
+          (hostel_id.touched || hostel_id.dirty || ref.submitted)
+        "
+      >
+        <p class="text-danger" *ngIf="hostel_id.errors?.['required']">
+          * Please Enter Hostel ID
+        </p>
+
+        <p class="text-danger" *ngIf="hostel_id.errors?.['pattern']">
+          *Invalid Hostel ID
+        </p>
+      </div>
+    </div>
+    <div class="mb-3 container">
+      <label for="student_id" class="form-label">Student ID</label>
+      <input
+        type="text"
+        [ngStyle]="{ 'border-color': hasErrorstudent_id() ? 'red' : '' }"
+        style="width: 60%; height: 40px; margin-left: -8px"
+        name="student_id"
+        id="student_id"
+        class="form-control"
+        placeholder="Student ID"
+        formControlName="student_id"
+      />
+      <div
+        *ngIf="
+          student_id.invalid &&
+          (student_id.touched || student_id.dirty || ref.submitted)
+        "
+      >
+        <p class="text-danger" *ngIf="student_id.errors?.['required']">
+          * Please Enter Student ID
+        </p>
+
+        <p class="text-danger" *ngIf="student_id.errors?.['minlength']">
+          *Invalid Student ID
+        </p>
+
+        <p class="text-danger" *ngIf="student_id.errors?.['maxlength']">
+          *Invalid Student ID
+        </p>
+        <p class="text-danger" *ngIf="student_id.errors?.['pattern']">
+          *Invalid Student ID
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <div class="mb-3">
+          <label for="dob" style="width: 60%" class="form-label"
+            >Date of Birth</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            [ngStyle]="{ 'border-color': hasErrordob() ? 'red' : '' }"
+            style="width: 60%; height: 40px"
+            formControlName="dob"
+          />
+          <div
+            *ngIf="dob.invalid && (dob.touched || dob.dirty || ref.submitted)"
+          >
+            <p
+              class="text-danger"
+              style="width: 60%; height: 40px"
+              *ngIf="dob.errors?.['required']"
+            >
+              * Please Enter Date of Birth
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="contactno" style="width: 60%" class="form-label"
+            >Contact No</label
+          >
+          <input
+            type="contactno"
+            [ngStyle]="{ 'border-color': hasErrorcontactno() ? 'red' : '' }"
+            style="width: 60%; height: 40px"
+            class="form-control"
+            formControlName="contactno"
+          />
+          <div
+            *ngIf="
+              contactno.invalid &&
+              (contactno.touched || contactno.dirty || ref.submitted)
+            "
+          >
+            <p
+              class="text-danger"
+              style="width: 60%; height: 40px"
+              *ngIf="contactno.errors?.['required']"
+            >
+              * Please Enter Contact No
+            </p>
+            <p
+              class="text-danger"
+              style="width: 53%; height: 40px; margin-left: 6%"
+              *ngIf="contactno.errors?.['pattern']"
+            >
+              *Invalid Contact No.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="username" style="width: 60%" class="form-label"
+          >Email</label
+        >
+        <input
+          type="email"
+          [ngStyle]="{ 'border-color': hasErroremail() ? 'red' : '' }"
+          style="width: 60%; height: 40px"
+          class="form-control"
+          formControlName="email"
+          placeholder="abc@mail.com"
+        />
+        <div
+          *ngIf="
+            email.invalid && (email.touched || email.dirty || ref.submitted)
+          "
+        >
+          <p
+            class="text-danger"
+            style="width: 60%; height: 40px"
+            *ngIf="email.errors?.['required']"
+          >
+            * Please Enter Email
+          </p>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="mb-3">
+        <label for="address"> Permanent Address </label><br />
+        <br />
+        <input
+          type="city"
+          class="form-control"
+          placeholder="City"
+          [ngStyle]="{ 'border-color': hasErrorcity() ? 'red' : '' }"
+          style="width: 60%; height: 40px"
+          formControlName="city"
+        />
+        <div
+          *ngIf="city.invalid && (city.touched || city.dirty || ref.submitted)"
+        >
+          <p
+            class="text-danger"
+            style="width: 60%; height: 60px"
+            *ngIf="city.errors?.['required']"
+          >
+            * Please Enter City
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Street"
+          [ngStyle]="{ 'border-color': hasErrorstreet() ? 'red' : '' }"
+          style="width: 60%; height: 40px"
+          formControlName="street"
+        />
+        <div
+          *ngIf="
+            street.invalid && (street.touched || street.dirty || ref.submitted)
+          "
+        >
+          <p
+            class="text-danger"
+            style="width: 60%; height: 40px"
+            *ngIf="street.errors?.['required']"
+          >
+            * Please Enter Street
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Pincode"
+          [ngStyle]="{ 'border-color': hasErrorpincode() ? 'red' : '' }"
+          style="width: 60%; height: 40px"
+          formControlName="pincode"
+        />
+        <div
+          *ngIf="
+            pincode.invalid &&
+            (pincode.touched || pincode.dirty || ref.submitted)
+          "
+        >
+          <p
+            class="text-danger"
+            style="width: 60%; height: 40px"
+            *ngIf="pincode.errors?.['required']"
+          >
+            * Please Enter Pincode
+          </p>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="mb-3 container">
+        <span class="form-check">
+          <input
+            type="radio"
+            id="male"
+            formControlName="selectedGender"
+            class="form-check-input"
+            value="male"
+            (change)="getUserSelection()"
+          />
+          <label for="male" class="form-check-label">Male</label>
+        </span>
+
+        <span class="form-check">
+          <input
+            type="radio"
+            id="female"
+            formControlName="selectedGender"
+            class="form-check-input"
+            value="female"
+            (change)="getUserSelection()"
+          />
+          <label for="female" class="form-check-label">Female</label>
+        </span>
+        <div
+          *ngIf="
+            selectedGender.invalid && (selectedGender.touched || ref.submitted)
+          "
+          class="text-danger"
+        >
+          *Please Select Your Gender
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-3 container">
+        <label>Select a Hostel</label>
+
+        <select
+          [ngStyle]="{ 'border-color': has2Error() ? 'red' : '' }"
+          class="form-select"
+          id="dropdown"
+          style="width: 60%; height: 40px"
+          formControlName="selectedHostel"
+        >
+          <option value="" disabled selected>Select Hostel</option>
+          <option
+            *ngFor="let hostel of userSelectedHostelList"
+            value="{{ hostel }}"
+          >
+            {{ hostel }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            updateUserForm.get('selectedHostel').invalid &&
+            (updateUserForm.get('selectedHostel').touched ||
+              updateUserForm.get('selectedHostel').dirty ||
+              ref.submitted)
+          "
+        >
+          <p class="text-danger">*Select a Hostel</p>
+        </div>
+      </div>
+      <br />
+    </div>
+
+    <div class="mb-3 container">
+      <label for="" class="form-label">Year: </label><br />
+
+      <span class="form-check">
+        <input
+          type="radio"
+          id="1st"
+          formControlName="selectedYear"
+          class="form-check-input"
+          value="1st"
+        />
+        <label for="1st" class="form-check-label">1st Year</label>
+      </span>
+
+      <span class="form-check">
+        <input
+          type="radio"
+          id="2nd"
+          formControlName="selectedYear"
+          class="form-check-input"
+          value="2nd"
+        />
+        <label for="2nd" class="form-check-label">2nd Year</label>
+      </span>
+      <span class="form-check">
+        <input
+          type="radio"
+          id="3rd"
+          formControlName="selectedYear"
+          class="form-check-input"
+          value="3rd"
+        />
+        <label for="3rd" class="form-check-label">3rd Year</label>
+      </span>
+      <span class="form-check">
+        <input
+          type="radio"
+          id="4th"
+          formControlName="selectedYear"
+          class="form-check-input"
+          value="4th"
+        />
+        <label for="4th" class="form-check-label">4th Year</label>
+      </span>
+      <div
+        *ngIf="selectedYear.invalid && (selectedYear.touched || ref.submitted)"
+        class="text-danger"
+      >
+        *Please Select Your Current Year
+      </div>
+    </div>
+
+    <br />
+
+    <div class="mb-3">
+      <label for="roomno" style="width: 60%" class="form-label">
+        Room Number</label
+      >
+      <input
+        type="number"
+        [ngStyle]="{ 'border-color': hasErrorroom() ? 'red' : '' }"
+        style="width: 60%; height: 40px"
+        class="form-control"
+        formControlName="roomno"
+        placeholder="000"
+      />
+      <div
+        *ngIf="
+          roomno.invalid && (roomno.touched || roomno.dirty || ref.submitted)
+        "
+      >
+        <p
+          class="text-danger"
+          style="width: 60%; height: 40px"
+          *ngIf="roomno.errors?.['required']"
+        >
+          * Please Enter Room No.
+        </p>
+
+        <p
+          class="text-danger"
+          style="width: 60%; height: 40px"
+          *ngIf="roomno.errors?.['pattern']"
+        >
+          *Invalid Room No.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-3 container">
+        <label for="" class="form-label">Rooms AC/NonAC</label><br />
+
+        <div class="checkbox-container">
+          <div class="form-check">
+            <input
+              type="radio"
+              value="1 Seater / Non-AC"
+              class="form-check-input"
+              formControlName="roomtype"
+            />
+
+            <label class="form-check-label">1 Seater / Non-AC</label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              value="1 Seater / AC"
+              class="form-check-input"
+              formControlName="roomtype"
+            />
+
+            <label class="form-check-label">1 Seater / AC</label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              value="2 Seater / Non-AC"
+              class="form-check-input"
+              formControlName="roomtype"
+            />
+
+            <label class="form-check-label">2 Seater / Non-AC</label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              value="2 Seater / AC"
+              class="form-check-input"
+              formControlName="roomtype"
+            />
+
+            <label class="form-check-label">2 Seater / AC</label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              value="3 Seater / Non-AC"
+              class="form-check-input"
+              formControlName="roomtype"
+            />
+
+            <label class="form-check-label">3 Seater / Non-AC</label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="radio"
+              value="3 Seater / AC"
+              class="form-check-input"
+              formControlName="roomtype"
+            />
+
+            <label class="form-check-label">3 Seater / AC</label>
+          </div>
+          <div
+            *ngIf="roomtype.invalid && (roomtype.touched || ref.submitted)"
+            class="text-danger"
+          >
+            *Please Select Your Room Type
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <br /><br />
+
+    <div id="submit_reset">
+      <button type="submit" class="btn btn-info">Update</button>
+      <button type="reset" class="btn btn-danger" id="reset">Reset</button>
+    </div>
+  </form>
+</body>

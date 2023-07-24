@@ -1,0 +1,70 @@
+<div class="search-box">
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Search by ID"
+    [(ngModel)]="searchID"
+  />
+</div>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Username</th>
+
+    <th>Gender</th>
+    <th>DOB</th>
+    <th>Contact No</th>
+    <th>Email</th>
+    <th>Hostel ID</th>
+    <th>Student ID</th>
+
+    <th>City</th>
+    <th>Street</th>
+    <th>Pincode</th>
+    <th>Year</th>
+    <th>Hostel</th>
+
+    <th>Room</th>
+    <th>Room Type</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userObj of usersAddList | filter : searchID">
+      <td>{{ userObj.id }}</td>
+      <td>{{ userObj.username }}</td>
+      <td>{{ userObj.selectedGender }}</td>
+      <td>{{ userObj.dob }}</td>
+      <td>{{ userObj.contactno }}</td>
+      <td>{{ userObj.email }}</td>
+      <td>{{ userObj.hostel_id }}</td>
+      <td>{{ userObj.student_id }}</td>
+      <td>{{ userObj.city }}</td>
+      <td>{{ userObj.street }}</td>
+      <td>{{ userObj.pincode }}</td>
+      <td>{{ userObj.selectedYear }}</td>
+      <td>{{ userObj.selectedHostel }}</td>
+      <td>{{ userObj.roomno }}</td>
+      <td>{{ userObj.roomtype }}</td>
+      <td>
+        <i class="fas fa-edit" routerLink="update-user/{{ userObj.id }}"></i>
+      </td>
+      <!-- Inside the view-users.component.html -->
+      <!-- <td>
+    <i class="fas fa-edit" [routerLink]="['/update-user', userObj.id]"></i>
+  </td> -->
+
+      <!-- (click)="updateUser(userObj.id)" -->
+      <td>
+        <button
+          class="button"
+          (click)="removeStudent(userObj.id)"
+          style="background-color: red; color: white"
+        >
+          X
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

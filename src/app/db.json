@@ -1,0 +1,253 @@
+{
+  "users": [
+    {
+      "username": "Anjali",
+      "password": "anjali",
+      "email": "",
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 1
+    },
+    {
+      "username": "Rumana",
+      "password": "Ruhiroshni",
+      "email": "rumana.kadru@gmail.com",
+      "address": {
+        "city": "Patna",
+        "street": "Adarsh Colony, West Patel Nagar, Post Office- Keshari Nagar ,Patna,Bihar",
+        "pincode": 800024
+      },
+      "id": 2
+    },
+    {
+      "username": "anjali",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 3
+    },
+    {
+      "username": "anjali",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 4
+    },
+    {
+      "username": "gggg",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 5
+    },
+    {
+      "username": "bjbb",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 6
+    },
+    {
+      "username": "vhvb",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 7
+    },
+    {
+      "username": "df",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 8
+    },
+    {
+      "username": "ss",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 9
+    },
+    {
+      "username": "er",
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 10
+    },
+    {
+      "username": null,
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 11
+    },
+    {
+      "username": null,
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 12
+    },
+    {
+      "username": null,
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 13
+    },
+    {
+      "username": null,
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 14
+    },
+    {
+      "username": null,
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 15
+    },
+    {
+      "username": null,
+      "password": null,
+      "email": null,
+      "address": {
+        "city": null,
+        "street": null,
+        "pincode": null
+      },
+      "id": 16
+    }
+  ],
+  "helps": [
+    {
+      "username": "Anjali Kumari",
+      "email": "anjali@gmail.com",
+      "contactno": 8210171637,
+      "roomno": 207,
+      "hostel": "Tamalika Ponda Seth Hall of Residence",
+      "helpbox": "WiFi is not working",
+      "id": 1
+    },
+    {
+      "username": "Subh",
+      "email": "subh@gmail.com",
+      "contactno": 9912345678,
+      "roomno": 109,
+      "hostel": "Balaji boys Hostel",
+      "helpbox": "Mess Food is very Bad",
+      "id": 2
+    }
+  ],
+  "add-users": [
+    {
+      "username": "Anjali Kumari",
+      "hostel_id": 207,
+      "student_id": "1230987",
+      "dob": "2023-07-06",
+      "email": "anjali@gmail.com",
+      "contactno": "8210171637",
+      "roomno": 207,
+      "city": "Patna",
+      "street": "Adarsh Colony",
+      "pincode": 800024,
+      "selectedGender": "female",
+      "selectedYear": "3rd",
+      "selectedHostel": "Tamalika Ponda Seth Hall of Residence",
+      "roomtype": "1 Seater / AC",
+      "id": 1
+    },
+    {
+      "username": "Himanshu",
+      "hostel_id": 125,
+      "student_id": "1230987",
+      "dob": "2023-07-21",
+      "email": "jh",
+      "contactno": "1234678777",
+      "roomno": 886,
+      "city": "j",
+      "street": "j",
+      "pincode": 723455,
+      "selectedGender": "male",
+      "selectedYear": "2nd",
+      "selectedHostel": "Ranichak Hostel",
+      "roomtype": "1 Seater / Non-AC",
+      "id": 2
+    },
+    {
+      "username": "Nikhil Kumar",
+      "hostel_id": 112,
+      "student_id": "0031901",
+      "dob": "2023-07-08",
+      "email": "nikhil@mail.com",
+      "contactno": "9649917118",
+      "roomno": 678,
+      "city": "Uttrakhand",
+      "street": "Kashipur",
+      "pincode": 670089,
+      "selectedGender": "male",
+      "selectedYear": "four",
+      "selectedHostel": "Ranichak Hostel",
+      "roomtype": "3 Seater / AC",
+      "id": 3
+    }
+  ]
+}
