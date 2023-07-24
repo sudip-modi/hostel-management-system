@@ -46,8 +46,20 @@ export class UpdateUserComponent implements OnInit {
       next: (result) => {
         console.log("RESULT");
         console.log(result);
+
         result = result[0];
+
+        const year = result['selectedYear'] == 'one' ? '1st' : result['selectedYear'] == 'two' ? '2nd' : result['selectedYear'] == 'three' ? '3rd' : result['selectedYear'] == 'four' ? '4th' : '1st';
+
+
+        if (result['selectedGender'] == 'male') {
+            this.userSelectedHostelList = this.male;
+          } else {
+            this.userSelectedHostelList = this.female;
+          }
+
         this.updateUserForm = new FormGroup({
+            id: new FormControl(result['id']),
           username: new FormControl(result['username'], [
             Validators.required,
             Validators.minLength(5),
@@ -65,21 +77,18 @@ export class UpdateUserComponent implements OnInit {
           email: new FormControl(result['email']),
           contactno: new FormControl(result['contactno']),
           roomno: new FormControl(result['roomno']),
-
           city: new FormControl(result['city']),
           street: new FormControl(result['street']),
           pincode: new FormControl(result['pincode']),
-
           selectedGender: new FormControl(result['selectedGender'], [
             Validators.required,
           ]),
-        //   selectedYear: new FormControl(result['selectedYear'], [
-        //     Validators.required,
-        //   ]),
+          selectedYear: new FormControl(year, [
+            Validators.required,
+          ]),
           selectedHostel: new FormControl(result['selectedHostel'], [
             Validators.required,
           ]),
-
           roomtype: new FormControl(result['roomtype'], [Validators.required]),
         });
       },
