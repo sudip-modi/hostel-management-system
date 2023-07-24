@@ -44,22 +44,32 @@ export class UpdateUserComponent implements OnInit {
     // GET ONE USER'S DATA
     this.uus.getCurrentData(uid).subscribe({
       next: (result) => {
-        console.log("RESULT");
+        console.log('RESULT');
         console.log(result);
 
         result = result[0];
 
-        const year = result['selectedYear'] == 'one' ? '1st' : result['selectedYear'] == 'two' ? '2nd' : result['selectedYear'] == 'three' ? '3rd' : result['selectedYear'] == 'four' ? '4th' : '1st';
+        console.log(result["id"]);
 
+        const year =
+          result['selectedYear'] == 'one'
+            ? '1st'
+            : result['selectedYear'] == 'two'
+            ? '2nd'
+            : result['selectedYear'] == 'three'
+            ? '3rd'
+            : result['selectedYear'] == 'four'
+            ? '4th'
+            : '1st';
 
         if (result['selectedGender'] == 'male') {
-            this.userSelectedHostelList = this.male;
-          } else {
-            this.userSelectedHostelList = this.female;
-          }
+          this.userSelectedHostelList = this.male;
+        } else {
+          this.userSelectedHostelList = this.female;
+        }
 
         this.updateUserForm = new FormGroup({
-            id: new FormControl(result['id']),
+          id: new FormControl(1,[Validators.required]),
           username: new FormControl(result['username'], [
             Validators.required,
             Validators.minLength(5),
@@ -83,19 +93,19 @@ export class UpdateUserComponent implements OnInit {
           selectedGender: new FormControl(result['selectedGender'], [
             Validators.required,
           ]),
-          selectedYear: new FormControl(year, [
-            Validators.required,
-          ]),
+          selectedYear: new FormControl(year, [Validators.required]),
           selectedHostel: new FormControl(result['selectedHostel'], [
             Validators.required,
           ]),
           roomtype: new FormControl(result['roomtype'], [Validators.required]),
         });
+        this.updateUserForm.get("id").disable();
       },
       error: (error) => {
         console.log(error);
         console.log(this.route.snapshot.params['id']);
       },
+      
     });
 
     this.updateUserForm = new FormGroup({

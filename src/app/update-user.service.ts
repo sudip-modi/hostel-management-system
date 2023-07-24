@@ -28,6 +28,7 @@ export class UpdateUserService {
 
 //   update the user
   updateUser(id: number, userData: any): Observable<any> {
+    userData['id'] = id;
     console.log("Updating");
     const url = `http://localhost:4000/updateuser-api/update-user/${id} `;
     return this.hc.put(url, userData);
